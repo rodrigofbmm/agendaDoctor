@@ -10,7 +10,7 @@ import  bookSlot  from "./resolvers/bookSlot.ts";
 import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
 const env = await load();
 
-const MONGO_URL = "mongodb+srv://rodrigofbm:1234567890r@cluster0.ern9y.mongodb.net/parcialpasado?retryWrites=true&w=majority";
+const MONGO_URL=env.MONGO_URL||Deno.env.get("MONGO_URL");// si hay .emv lo leo si no lo lee de las variables de entorno de deno
 
 if (!MONGO_URL) {
   console.log("No mongo URL found");

@@ -1,9 +1,12 @@
 import { Request, Response } from "npm:express@4.18.2";
 import SlotModel from "../db/person.ts";
 
+
 const bookSlot = async (req: Request, res: Response) => {
   try {
     const { day, month, year, hour, dni } = req.body;
+    
+    const slot = 1;
 
     if (!day || !month || !year || !hour || !dni) {
       res.status(400).send("Faltan parámetros en la solicitud");
